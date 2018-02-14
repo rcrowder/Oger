@@ -42,7 +42,65 @@ def mackey_glass(sample_len=1000, tau=17, seed=None, n_samples = 1):
         samples.append([inp])
     return samples
 
-def mso(sample_len=1000, n_samples = 1):
+def mso_2(sample_len=1000, n_samples = 1):
+    '''
+    mso(sample_len=1000, n_samples = 1) -> input
+    Generate the Multiple Sinewave Oscillator time-series, a sum of two sines.
+    Parameters are:
+        - sample_len: length of the time-series in timesteps
+        - n_samples: number of samples to generate
+    '''
+    signals = []
+    for _ in range(n_samples):
+        x = np.atleast_2d(mdp.numx.arange(sample_len)).T
+        signals.append([np.sin(0.2 * x) + np.sin(0.311 * x)])
+    return signals
+
+def mso_3(sample_len=1000, n_samples = 1):
+    '''
+    mso(sample_len=1000, n_samples = 1) -> input
+    Generate the Multiple Sinewave Oscillator time-series, a sum of three sines.
+    Parameters are:
+        - sample_len: length of the time-series in timesteps
+        - n_samples: number of samples to generate
+    '''
+    signals = []
+    for _ in range(n_samples):
+        x = np.atleast_2d(mdp.numx.arange(sample_len)).T
+        signals.append([np.sin(0.2 * x) + np.sin(0.311 * x) + np.sin(0.42 * x)])
+    return signals
+
+def mso_5(sample_len=1000, n_samples = 1):
+    '''
+    mso(sample_len=1000, n_samples = 1) -> input
+    Generate the Multiple Sinewave Oscillator time-series, a sum of three sines.
+    Parameters are:
+        - sample_len: length of the time-series in timesteps
+        - n_samples: number of samples to generate
+    '''
+    signals = []
+    for _ in range(n_samples):
+        x = np.atleast_2d(mdp.numx.arange(sample_len)).T
+        signals.append([np.sin(0.2 * x) + np.sin(0.311 * x) + np.sin(0.42 * x) + \
+                        np.sin(0.51 * x) + np.sin(0.74 * x)])
+    return signals
+
+def mso_6(sample_len=1000, n_samples = 1):
+    '''
+    mso(sample_len=1000, n_samples = 1) -> input
+    Generate the Multiple Sinewave Oscillator time-series, a sum of three sines.
+    Parameters are:
+        - sample_len: length of the time-series in timesteps
+        - n_samples: number of samples to generate
+    '''
+    signals = []
+    for _ in range(n_samples):
+        x = np.atleast_2d(mdp.numx.arange(sample_len)).T
+        signals.append([np.sin(0.2 * x) + np.sin(0.311 * x) + np.sin(0.42 * x) + \
+                        np.sin(0.51 * x) + np.sin(0.74 * x) + np.sin(0.81 * x)])
+    return signals
+
+def mso_rng_phase(sample_len=1000, n_samples = 1):
     '''
     mso(sample_len=1000, n_samples = 1) -> input
     Generate the Multiple Sinewave Oscillator time-series, a sum of two sines

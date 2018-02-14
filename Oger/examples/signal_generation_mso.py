@@ -9,8 +9,8 @@ if __name__ == "__main__":
     n_training_samples = 3
     test_sample_length = 5000
 
-    train_signals = Oger.datasets.mso(sample_len=training_sample_length, n_samples=n_training_samples)
-    test_signals = Oger.datasets.mso(sample_len=test_sample_length, n_samples=1)
+    train_signals = Oger.datasets.mso_3(sample_len=training_sample_length, n_samples=n_training_samples)
+    test_signals = Oger.datasets.mso_3(sample_len=test_sample_length, n_samples=1)
 
     reservoir = Oger.nodes.LeakyReservoirNode(output_dim=100, reset_states=False)
 
